@@ -1,112 +1,41 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Pizza.Co</title>
 
-    <style>
-
-        .subscribe-button {
-            overflow: hidden;
-            background-color: rgb(162, 159, 159);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-right: 8px;
-            margin-left: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 16px;
-            padding-right: 16px;
-            transition: opacity 0.15s;
-            vertical-align: top;
-            text-decoration: none;
-        }
-
-            .subscribe-button:hover {
-                opacity: 0.8;
-            }
-
-            .subscribe-button:active {
-                opacity: 0.5;
-            }
-
-        .navbar {
-            overflow: hidden;
-            background-color: rgb(162, 159, 159);
-            padding: 10px 30px 0;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-right: 6px;
-            margin-left: 18px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            padding-left: 20px;
-            padding-right: 20px;
-            transition: opacity 0.15s;
-            vertical-align: top;
-        }
-
-            .navbar a {
-                float: left;
-                font-size: 18px;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-                .navbar a:hover {
-                    background-color: grey;
-                    border-radius: 6px;
-                }
-
-        .show {
-            display: block;
-        }
-
-    </style>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1_p.co.styles.css" asp-append-version="true" />
+    
 </head>
 
-<header id="showcase">
-    <h1 style="text-align:center" ;>Pizza.Co</h1>
-    <p style="text-align:center" ;>Established 2023</p>
-</header>
 
-<div class="navbar">
+<body>
 
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="ctc.html">Contact Us</a>
-    <a href="abt.html">About Us </a>
+    <header>
+        <div class="navbar">
+            <a asp-area="" asp-page="/Index">Home</a>
+            <a href="menu.html">Menu</a>
+            <a asp-area="" asp-page="/Contact Us">Contact Us</a>
+            <a href="abt.html">About Us </a>
+        </div>
 
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </header>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
-</div>
+    @await RenderSectionAsync("Scripts", required: false)
+
 </body>
-</html>
-
-<html>
-
-<header id="showingcase">
-    <h1>Welcome To Pizza.Co</h1>
-    <p>Using Homemade Fresh Ingredients</p>
-    <a href="menu.html" class="subscribe-button">Order Now</a>
-</header>
-
-<section id="section-a">
-    <p>Want to know more about us? Click below.</p>
-    <a href="abt.html" class="subscribe-button">About Us</a>
-</section>
-
 </html>
